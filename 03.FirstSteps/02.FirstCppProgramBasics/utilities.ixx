@@ -15,7 +15,7 @@ export void do_work(){
     fmt::println("Hello,");
     fmt::println("World!");
 
-    int num1{6};
+    int num1{7};
     int num2{6};
     int result=add_numbers(num1,num2);
    // int result=num1+num2;
