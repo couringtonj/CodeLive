@@ -1,5 +1,6 @@
 module;
 #include<fmt/format.h>
+#include<string>
 export module utilities; 
 
 export void number_systems(){
@@ -39,4 +40,8 @@ export void numeric_limits(){
   fmt::println("the range for double is {} to {}: ",std::numeric_limits<double>::min(),std::numeric_limits<double>::max());
   fmt::println("the range for long double is {} to {}: ",std::numeric_limits<long double>::min(),std::numeric_limits<long double>::max());
 
+}
+
+export void say_hello(std::string name){
+    fmt::println("Hello, {}!",name);
 }
