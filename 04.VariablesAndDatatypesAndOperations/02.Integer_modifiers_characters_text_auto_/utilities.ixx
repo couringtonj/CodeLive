@@ -55,3 +55,29 @@ export void assignment_initialization(){
     fmt::println("sizeof int: {}", sizeof(int));
     fmt::println("sizeof truck_count: {}", sizeof(truck_count));
 }   
+
+export void integer_modifiers(){
+    //Integer modifiers
+     //Integer modifiers
+   signed int value1{10};
+   signed int value2{-20};
+   fmt::println("Value1: {},\n Value2: {}", value1, value2);
+
+   unsigned int value3{30}; // only positive numbers
+   //unsigned int value4{-40}; //error: negative value not allowed
+    fmt::println("Value3: {}", value3);
+
+
+    short int value5{100}; //only 2 bytes regular ints occupy 4 bytes
+    fmt::println("Value5: {}, sizeof: {}", value5,sizeof(value5));
+
+    long int value6{1000};
+    fmt::println("Value6: {}", value6);
+
+    signed long int value7{-10000};
+    fmt::println("Value7: {}, sizeof: {}", value7, sizeof(value7) );//4 or 8 bytes depending on system
+
+    unsigned long long int value8{20000};
+    fmt::println("Value8: {}, sizeof: {}", value8, sizeof(value8)   );//8 bytes
+
+}

@@ -14,5 +14,7 @@ int main(){
 
    //assignment_initialization();
 
+  integer_modifiers();
+
     return 0;
 }
