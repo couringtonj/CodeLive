@@ -1,5 +1,8 @@
 module;
 #include<fmt/format.h>
+#include<vector>
+#include<array>
+#include<string>
 export module utilities; 
 
 export void braced_initialization() {
@@ -80,4 +83,109 @@ export void integer_modifiers(){
     unsigned long long int value8{20000};
     fmt::println("Value8: {}, sizeof: {}", value8, sizeof(value8)   );//8 bytes
 
+}
+
+export void floating_point(){
+   //Fractional numbers
+  float number1{1.12345678901234567890f};
+  double number2{1.12345678901234567890};
+  long double number3{1.12345678901234567890L};
+
+  fmt::println("Float number: {}", number1);
+  fmt::println("Double number: {}", number2);
+  fmt::println("Long Double number: {}", number3);
+  fmt::println("--------------------------------");
+  double number5{192400023};
+  double number6{1.92400023e8};
+  double number7{3.498e8};
+  double number8{0.0000000000003498};
+  double number9{3.498e-11};
+  fmt::println("number5: {}", number5);
+  fmt::println("number6: {}", number6);
+  fmt::println("number7: {}", number7);   
+  fmt::println("number8: {}", number8);
+  fmt::println("number9: {}", number9);
+}
+
+export void Nan_infinity(){
+   fmt::println("--------------------------------");
+  double number10{-5.6};
+  double number11{0};
+  double number12{0};
+
+  //infinity
+  double result{number10/number11};
+  fmt::println("Result of dividing {} by {}: {}", number10, number11, result);
+  fmt::println("{} + {} yields: {}",result,number10,result+number10);
+  fmt::println("--------------------------------");
+  ///NaN
+  result=number11/number12;
+  fmt::println("Result of dividing {} by {}: {}", number11, number12, result);
+
+}
+
+export void bool_variables(){
+   //Booleans
+   bool red_light{false};
+   bool green_light{true};
+   fmt::print("Red light: {}\n", red_light);
+   fmt::print("Green light: {}\n", green_light);
+
+   if(red_light==true){
+      fmt::print("Stop!\n");
+   } else {
+      fmt::print("Go!\n");
+   }
+
+   fmt::println("size of bool is: {} bytes", sizeof(bool));
+}
+
+export void char_and_text(){
+   //Characters and Text
+   char character1{'a'};
+   char character2{'b'};
+   char value=65;
+   fmt::println("Character1: {}", character1);
+   fmt::println("Character2: {}", character2);
+   fmt::println("Value as character: {}", value);
+   fmt::println("Value as integer: {}", static_cast<int>(value));
+}
+
+export void collections(){
+   const std::vector<char> vowels{'a','e','i','o','u','A','E','I','O','U'};//can expand
+//std::array<char,5> consonants{'b','c','d','f','g'};//fixed size
+
+ //fmt::println("Vowel: {}",vowels[1]);
+
+ std::string message("arrow");//capacity to grow
+ fmt::println("Message: {}",message);
+
+ std::string greeting{"Hello"};
+ fmt::println("Greeting: {}",greeting);
+ 
+ std::string farewell = " Goodbye";
+ greeting.append(farewell);
+ fmt::println("Farewell message: {}",greeting);
+
+}
+
+export void auto_numbers(){
+    //auto keyword
+ auto var1{12};
+ auto var2{13.0};
+ auto var3{14.0f};
+ auto var4{15.0l};
+ auto var5{'c'};
+ auto var6{123u};
+ auto var7{123ul};
+ auto var8{123ll};
+
+ fmt::println("var1 occupies: {} bytes",sizeof(var1));
+ fmt::println("var2 occupies: {} bytes",sizeof(var2));  
+ fmt::println("var3 occupies: {} bytes",sizeof(var3));
+ fmt::println("var4 occupies: {} bytes",sizeof(var4));
+ fmt::println("var5 occupies: {} bytes",sizeof(var5));
+ fmt::println("var6 occupies: {} bytes",sizeof(var6));
+ fmt::println("var7 occupies: {} bytes",sizeof(var7));
+ fmt::println("var8 occupies: {} bytes",sizeof(var8));
 }
